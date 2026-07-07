@@ -40,9 +40,9 @@ export function Contact() {
                       Office Location
                     </h4>
                     <p className="text-text-secondary">
-                      123 Education Hub, Ring Road
+                      Tinkune
                       <br />
-                      Kathmandu, Nepal 44600
+                      Kathmandu, Nepal
                     </p>
                   </div>
                 </div>
@@ -56,9 +56,7 @@ export function Contact() {
                       Phone Number
                     </h4>
                     <p className="text-text-secondary">
-                      +977 1-4123456
-                      <br />
-                      +977 9801234567
+                      +977 9800000000
                     </p>
                   </div>
                 </div>
@@ -72,9 +70,9 @@ export function Contact() {
                       Email Address
                     </h4>
                     <p className="text-text-secondary">
-                      support@brilliantjobbank.com
+                      support@js-sister.com
                       <br />
-                      info@brilliantjobbank.com
+                      info@js-sister.com
                     </p>
                   </div>
                 </div>

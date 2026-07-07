@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, MapPin, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="bg-surface-base border-t border-border-default pt-20 pb-10 relative z-20">
@@ -103,11 +103,15 @@ export function Footer() {
             <ul className="space-y-4 text-base text-text-secondary">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-0.5 shrink-0 text-surface-accent" />
-                <span>Kathmandu, Nepal</span>
+                <span>Tinkune, Kathmandu, Nepal</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0 text-surface-accent" />
-                <span>support@brilliantjobbank.com</span>
+                <Phone className="h-5 w-5 mt-0.5 shrink-0 text-surface-accent" />
+                <span>+977 9800000000</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="h-5 w-5 mt-0.5 shrink-0 text-surface-accent" />
+                <span>support@js-sister.com</span>
               </li>
             </ul>
           </div>
