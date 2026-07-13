@@ -119,7 +119,7 @@ export function Footer() {
 
         <div className="border-t border-border-muted pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-tertiary">
           <p>
-            © {new Date().getFullYear()} Brilliant Brain Teachers Bank. All
+            © {new Date().getFullYear()} js-sister Teachers Bank. All
             rights reserved.
           </p>
           <div className="flex gap-8">

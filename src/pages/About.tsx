@@ -19,7 +19,7 @@ export function About() {
             <span className="text-surface-accent">Nepal</span>
           </h1>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Brilliant Brain Teachers Bank was founded with a single mission: to
+            js-sister Teachers Bank was founded with a single mission: to
             bridge the gap between exceptional educators and leading
             institutions, elevating the standard of education nationwide.
           </p>

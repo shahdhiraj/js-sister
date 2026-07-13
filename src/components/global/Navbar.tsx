@@ -4,11 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { GraduationCap, Menu, X, Search as SearchIcon } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Magnetic } from '../ui/motion';
+import { useAuth } from '../../lib/AuthContext';
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
+  const { user, role } = useAuth();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -86,11 +88,19 @@ export function Navbar() {
               
               <SearchIcon className="h-5 w-5" />
             </button>
-            <Link to="/login">
-              <Button variant="ghost" className="hover:bg-surface-muted/80">
-                Login
-              </Button>
-            </Link>
+            {user && role !== 'guest' ? (
+              <Link to="/dashboard">
+                <Button variant="ghost" className="hover:bg-surface-muted/80">
+                  Dashboard
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <Button variant="ghost" className="hover:bg-surface-muted/80">
+                  Login
+                </Button>
+              </Link>
+            )}
             <Magnetic>
               <Link to="/post-job" tabIndex={-1}>
                 <Button
@@ -154,11 +164,19 @@ export function Navbar() {
                   </Link>
               )}
                 <div className="flex flex-col gap-2 pt-4 border-t border-border-muted">
-                  <Link to="/login" className="w-full">
-                    <Button variant="outline" className="w-full">
-                      Login
-                    </Button>
-                  </Link>
+                  {user && role !== 'guest' ? (
+                    <Link to="/dashboard" className="w-full">
+                      <Button variant="outline" className="w-full">
+                        Dashboard
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Link to="/login" className="w-full">
+                      <Button variant="outline" className="w-full">
+                        Login
+                      </Button>
+                    </Link>
+                  )}
                   <Link to="/post-job" className="w-full">
                     <Button variant="accent" className="w-full">
                       Post a Job

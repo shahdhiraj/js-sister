@@ -14,7 +14,7 @@ import { FadeIn } from '../components/ui/motion';
 const FAQS = [
 {
   category: 'General',
-  q: 'How does Brilliant Brain Teachers Bank work?',
+  q: 'How does js-sister Teachers Bank work?',
   a: 'We are a specialized platform connecting qualified teachers with schools across Nepal. Teachers can create profiles and apply for jobs, while schools can post vacancies and search our database for the perfect candidates.'
 },
 {

@@ -182,7 +182,7 @@ export function RegisterTeacher() {
               Registration Complete!
             </h3>
             <p className="text-text-secondary text-lg mb-8 max-w-md mx-auto">
-              Welcome to Brilliant Brain Teachers Bank. Your profile is now
+              Welcome to js-sister Teachers Bank. Your profile is now
               under review. We will notify you once it is approved.
             </p>
             <Magnetic>

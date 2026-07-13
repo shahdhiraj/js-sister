@@ -263,6 +263,81 @@ export function Home() {
         </div>
       </section>
 
+      {/* Latest Vacancies */}
+      <section className="py-24 bg-surface-muted">
+        <div className="container mx-auto px-4 md:px-6">
+          <FadeIn className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+              <h2 className="text-4xl font-bold text-surface-strong mb-4">
+                Latest Vacancies
+              </h2>
+              <p className="text-text-secondary text-lg max-w-2xl">
+                Explore the newest teaching opportunities across top schools.
+              </p>
+            </div>
+            <Magnetic>
+              <Link to="/jobs" tabIndex={-1}>
+                <Button
+                  variant="outline"
+                  className="shrink-0 bg-surface-base hover:bg-surface-base hover:border-surface-strong hover:text-surface-strong shadow-1">
+                  View All Jobs <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </Magnetic>
+          </FadeIn>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) =>
+              <StaggerItem key={i}>
+                <Link to={`/jobs/${i}`} className="block h-full">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="bg-surface-base rounded-2xl p-6 border border-border-default shadow-1 hover:shadow-3 hover:border-surface-accent/50 transition-all h-full flex flex-col"
+                  >
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-surface-muted flex items-center justify-center border border-border-default shrink-0">
+                        <Building className="h-6 w-6 text-text-tertiary" />
+                      </div>
+                      <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-200">
+                        Full Time
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-surface-strong mb-2 line-clamp-1">
+                      {['Mathematics', 'Science', 'English', 'Computer', 'Primary', 'Social Studies'][i % 6]} Teacher
+                    </h3>
+                    <p className="text-text-secondary text-sm mb-4 line-clamp-1">
+                      {['Everest Academy', 'Kathmandu International', 'Valley Public School', 'Global College', 'Sunshine School', 'Pioneer Academy'][i % 6]}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex items-center text-xs text-text-tertiary bg-surface-muted px-2 py-1 rounded">
+                        <MapPin className="h-3 w-3 mr-1" />
+                        Kathmandu
+                      </div>
+                      <div className="flex items-center text-xs text-text-tertiary bg-surface-muted px-2 py-1 rounded">
+                        <Briefcase className="h-3 w-3 mr-1" />
+                        3+ Years Exp.
+                      </div>
+                    </div>
+                    
+                    <div className="mt-auto pt-4 border-t border-border-muted flex justify-between items-center">
+                      <span className="font-bold text-surface-accent text-sm">
+                        Rs. 40k - 60k
+                      </span>
+                      <span className="text-xs text-text-tertiary">
+                        Posted 2 days ago
+                      </span>
+                    </div>
+                  </motion.div>
+                </Link>
+              </StaggerItem>
+            )}
+          </StaggerContainer>
+        </div>
+      </section>
+
+
       {/* Stats Section */}
       <section className="py-16 bg-surface-base relative z-20">
         <div className="container mx-auto px-4 md:px-6">
@@ -680,7 +755,7 @@ export function Home() {
                   )}
                 </div>
                 <p className="text-lg leading-relaxed mb-6 italic">
-                  "Brilliant Brain made finding a qualified math teacher
+                  "js-sister made finding a qualified math teacher
                   effortless. The AI matching saved us weeks of reviewing
                   resumes."
                 </p>
@@ -826,7 +901,7 @@ export function Home() {
             </h2>
             <p className="text-white text-xl mb-12 max-w-2xl mx-auto font-medium">
               Join thousands of teachers who have found their ideal schools
-              through Brilliant Brain Teachers Bank.
+              through js-sister Teachers Bank.
             </p>
           </FadeIn>
 
