@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   MapPin,
   Briefcase,
@@ -16,7 +16,26 @@ import {
   FadeIn,
   Magnetic } from
 '../components/ui/motion';
+import { Link } from 'react-router-dom';
+
 export function JobDetails() {
+  const [isApplied, setIsApplied] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+
+  const handleApply = () => {
+    setIsApplied(true);
+    alert('Application submitted successfully!');
+  };
+
+  const handleSave = () => {
+    setIsSaved(!isSaved);
+  };
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Link copied to clipboard!');
+  };
+
   return (
     <div className="min-h-screen bg-surface-muted pb-24">
       {/* Breadcrumbs */}
@@ -71,21 +90,37 @@ export function JobDetails() {
             </div>
             <div className="flex gap-3 w-full md:w-auto mt-4 md:mt-0">
               <Magnetic>
-                <Button variant="outline" className="w-12 px-0 shrink-0">
-                  <Bookmark className="w-5 h-5 text-text-secondary" />
+                <Button 
+                  variant="outline" 
+                  className={`w-12 px-0 shrink-0 ${isSaved ? 'border-surface-accent bg-surface-accent/5' : ''}`}
+                  onClick={handleSave}
+                >
+                  <Bookmark className={`w-5 h-5 ${isSaved ? 'text-surface-accent fill-current' : 'text-text-secondary'}`} />
                 </Button>
               </Magnetic>
               <Magnetic>
-                <Button variant="outline" className="w-12 px-0 shrink-0">
+                <Button 
+                  variant="outline" 
+                  className="w-12 px-0 shrink-0 hover:border-surface-accent transition-colors"
+                  onClick={handleShare}
+                >
                   <Share2 className="w-5 h-5 text-text-secondary" />
                 </Button>
               </Magnetic>
               <Magnetic>
                 <Button
-                  variant="accent"
-                  className="flex-1 md:flex-none px-8 shadow-2">
-                  
-                  Apply Now
+                  variant={isApplied ? "outline" : "accent"}
+                  className={`flex-1 md:flex-none px-8 shadow-2 ${isApplied ? 'text-green-600 border-green-600 hover:bg-green-50 pointer-events-none' : ''}`}
+                  onClick={handleApply}
+                >
+                  {isApplied ? (
+                    <>
+                      <CheckCircle2 className="w-5 h-5 mr-2 inline-block" />
+                      Applied
+                    </>
+                  ) : (
+                    'Apply Now'
+                  )}
                 </Button>
               </Magnetic>
             </div>
@@ -234,24 +269,26 @@ export function JobDetails() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">Kathmandu Valley School</h3>
-                  <a
-                    href="#"
+                  <Link
+                    to="/schools"
                     className="text-surface-accent text-sm hover:underline">
                     
                     View Profile
-                  </a>
+                  </Link>
                 </div>
               </div>
               <p className="text-surface-muted/80 text-sm mb-6 leading-relaxed">
                 A premier educational institution committed to providing
                 holistic education and fostering academic excellence since 1995.
               </p>
-              <Button
-                variant="outline"
-                className="w-full border-surface-muted/30 text-surface-base hover:bg-surface-base hover:text-surface-strong">
-                
-                View All Jobs (4)
-              </Button>
+              <Link to="/jobs" className="block w-full">
+                <Button
+                  variant="outline"
+                  className="w-full border-surface-muted/30 text-surface-base hover:bg-surface-base hover:text-surface-strong">
+                  
+                  View All Jobs (4)
+                </Button>
+              </Link>
             </FadeIn>
           </div>
         </div>

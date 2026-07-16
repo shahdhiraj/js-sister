@@ -8,7 +8,8 @@ import {
   Briefcase, 
   FileText,
   LogOut,
-  GraduationCap
+  GraduationCap,
+  Building
 } from 'lucide-react';
 
 export const Sidebar = () => {
@@ -21,6 +22,9 @@ export const Sidebar = () => {
           { name: 'Overview', to: '/dashboard', icon: LayoutDashboard, exact: true },
           { name: 'Content Management', to: '/dashboard/cms', icon: FileText },
           { name: 'Manage Users', to: '/dashboard/users', icon: Users },
+          { name: 'Schools', to: '/dashboard/admin/schools', icon: Building },
+          { name: 'Teachers', to: '/dashboard/admin/teachers', icon: GraduationCap },
+          { name: 'Vacancies', to: '/dashboard/admin/vacancies', icon: Briefcase },
           { name: 'Settings', to: '/dashboard/settings', icon: Settings },
         ];
       case 'teacher':
@@ -28,6 +32,7 @@ export const Sidebar = () => {
           { name: 'Overview', to: '/dashboard', icon: LayoutDashboard, exact: true },
           { name: 'My Applications', to: '/dashboard/applications', icon: Briefcase },
           { name: 'Saved Jobs', to: '/dashboard/saved', icon: FileText },
+          { name: 'Schools', to: '/dashboard/schools', icon: Building },
           { name: 'Profile Settings', to: '/dashboard/settings', icon: Settings },
         ];
       case 'school':
@@ -35,6 +40,7 @@ export const Sidebar = () => {
           { name: 'Overview', to: '/dashboard', icon: LayoutDashboard, exact: true },
           { name: 'My Job Postings', to: '/dashboard/jobs', icon: Briefcase },
           { name: 'Applicants', to: '/dashboard/applicants', icon: Users },
+          { name: 'Find Teachers', to: '/dashboard/find-teachers', icon: GraduationCap },
           { name: 'School Profile', to: '/dashboard/settings', icon: Settings },
         ];
       default:

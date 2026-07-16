@@ -20,7 +20,15 @@ import {
   ChevronUp,
   Sparkles,
   BookOpen,
-  Globe } from
+  Globe,
+  Phone,
+  Mail,
+  Clock,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Send } from
 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
@@ -795,6 +803,81 @@ export function Home() {
           </div>
         </div>
       </section>
+      {/* Blog Section */}
+      <section className="py-24 bg-surface-muted">
+        <div className="container mx-auto px-4 md:px-6">
+          <FadeIn className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+              <h2 className="text-4xl font-bold text-surface-strong mb-4">
+                Latest Insights
+              </h2>
+              <p className="text-text-secondary text-lg max-w-2xl">
+                Stay updated with the latest teaching strategies, curriculum updates, and career advice.
+              </p>
+            </div>
+            <Magnetic>
+              <Link to="/blogs" tabIndex={-1}>
+                <Button
+                  variant="outline"
+                  className="shrink-0 bg-surface-base hover:bg-surface-base hover:border-surface-strong hover:text-surface-strong shadow-1">
+                  View More <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </Magnetic>
+          </FadeIn>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                id: '1',
+                title: 'Top 10 Teaching Strategies for Engaging Students in Nepal',
+                category: 'Teaching Tips',
+                imageUrl: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800',
+              },
+              {
+                id: '2',
+                title: 'Navigating the New Curriculum: What Teachers Need to Know',
+                category: 'Curriculum Updates',
+                imageUrl: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800',
+              },
+              {
+                id: '3',
+                title: 'How to Build a Standout Teacher Profile on Jobs Sniper',
+                category: 'Career Advice',
+                imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800',
+              }
+            ].map((blog, i) => (
+              <StaggerItem key={i}>
+                <Link to={`/blogs/${blog.id}`} className="block h-full group">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="bg-surface-base rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-border-default h-full flex flex-col"
+                  >
+                    <div className="aspect-[16/9] relative overflow-hidden">
+                      <img
+                        src={blog.imageUrl}
+                        alt={blog.title}
+                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-4 left-4 bg-surface-base/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-surface-strong">
+                        {blog.category}
+                      </div>
+                    </div>
+                    <div className="p-6 flex-grow flex flex-col justify-between">
+                      <h3 className="text-xl font-bold text-surface-strong mb-3 line-clamp-2 group-hover:text-surface-accent transition-colors">
+                        {blog.title}
+                      </h3>
+                      <div className="text-surface-accent font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
+                        Read More <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </motion.div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
 
       {/* FAQ Preview */}
       <section className="py-24 bg-surface-base">
@@ -931,6 +1014,122 @@ export function Home() {
               </Magnetic>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-24 bg-surface-muted">
+        <div className="container mx-auto px-4 md:px-6">
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-surface-strong mb-4">
+              Get in Touch
+            </h2>
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+              We're here to help you with any questions or support you need.
+            </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Contact Info */}
+            <FadeIn direction="right">
+              <div className="bg-surface-base p-8 rounded-3xl shadow-1 border border-border-default h-full">
+                <h3 className="text-2xl font-bold text-surface-strong mb-8">
+                  Contact Information
+                </h3>
+
+                <div className="space-y-8">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-surface-muted flex items-center justify-center shrink-0">
+                      <MapPin className="h-6 w-6 text-surface-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-surface-strong mb-1">Office Location</h4>
+                      <p className="text-text-secondary">Tinkune<br />Kathmandu, Nepal</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-surface-muted flex items-center justify-center shrink-0">
+                      <Phone className="h-6 w-6 text-surface-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-surface-strong mb-1">Phone Number</h4>
+                      <p className="text-text-secondary">+977 9800000000</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-surface-muted flex items-center justify-center shrink-0">
+                      <Mail className="h-6 w-6 text-surface-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-surface-strong mb-1">Email Address</h4>
+                      <p className="text-text-secondary">support@js-sister.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-surface-muted flex items-center justify-center shrink-0">
+                      <Clock className="h-6 w-6 text-surface-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-surface-strong mb-1">Business Hours</h4>
+                      <p className="text-text-secondary">Sun - Fri: 9:00 AM - 5:00 PM</p>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-border-default mt-8">
+                    <h4 className="font-bold text-surface-strong mb-4">Follow Us</h4>
+                    <div className="flex gap-4">
+                      <a href="#" className="w-10 h-10 rounded-full bg-surface-muted flex items-center justify-center text-text-secondary hover:text-surface-accent transition-colors border border-transparent">
+                        <Facebook className="h-5 w-5" />
+                      </a>
+                      <a href="#" className="w-10 h-10 rounded-full bg-surface-muted flex items-center justify-center text-text-secondary hover:text-surface-accent transition-colors border border-transparent">
+                        <Twitter className="h-5 w-5" />
+                      </a>
+                      <a href="#" className="w-10 h-10 rounded-full bg-surface-muted flex items-center justify-center text-text-secondary hover:text-surface-accent transition-colors border border-transparent">
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                      <a href="#" className="w-10 h-10 rounded-full bg-surface-muted flex items-center justify-center text-text-secondary hover:text-surface-accent transition-colors border border-transparent">
+                        <Instagram className="h-5 w-5" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Quick Contact Form */}
+            <FadeIn direction="left">
+              <div className="bg-surface-base p-8 rounded-3xl shadow-2 border border-border-default h-full">
+                <h3 className="text-2xl font-bold text-surface-strong mb-6">
+                  Send a Message
+                </h3>
+                <form onSubmit={(e) => { e.preventDefault(); alert("Message sent successfully!"); }} className="space-y-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-text-primary">Name</label>
+                    <Input placeholder="Your Name" required />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-text-primary">Email</label>
+                    <Input type="email" placeholder="your@email.com" required />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-text-primary">Message</label>
+                    <textarea
+                      rows={5}
+                      className="flex w-full rounded-md border border-border-default bg-surface-base px-3 py-2 text-base text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring resize-none"
+                      placeholder="How can we help you?"
+                      required>
+                    </textarea>
+                  </div>
+                  <Button type="submit" variant="accent" className="w-full h-12 text-lg mt-4">
+                    <Send className="h-5 w-5 mr-2" /> Send Message
+                  </Button>
+                </form>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </>);

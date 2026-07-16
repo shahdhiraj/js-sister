@@ -39,10 +39,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/resources"
+                  to="/blogs"
                   className="hover:text-surface-accent transition-colors inline-block hover:translate-x-1 transform duration-200">
                   
-                  Career Advice
+                  Career Blog
                 </Link>
               </li>
               <li>

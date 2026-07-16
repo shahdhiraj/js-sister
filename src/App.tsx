@@ -19,7 +19,8 @@ import { Login } from './pages/Login';
 import { RegisterTeacher } from './pages/RegisterTeacher';
 import { RegisterSchool } from './pages/RegisterSchool';
 import { About } from './pages/About';
-
+import { Blogs } from './pages/Blogs';
+import { BlogDetails } from './pages/BlogDetails';
 // Dashboard Components
 import { DashboardLayout } from './components/dashboard/DashboardLayout';
 import { DashboardOverview } from './pages/dashboard/DashboardOverview';
@@ -30,6 +31,12 @@ import { MyApplications } from './pages/dashboard/MyApplications';
 import { SavedJobs } from './pages/dashboard/SavedJobs';
 import { MyJobPostings } from './pages/dashboard/MyJobPostings';
 import { Applicants } from './pages/dashboard/Applicants';
+import { SchoolsList } from './pages/dashboard/SchoolsList';
+import { AdminSchools } from './pages/dashboard/AdminSchools';
+import { AdminTeachers } from './pages/dashboard/AdminTeachers';
+import { AdminTeacherDetails } from './pages/dashboard/AdminTeacherDetails';
+import { AdminVacancies } from './pages/dashboard/AdminVacancies';
+import { TeachersList } from './pages/dashboard/TeachersList';
 
 export function App() {
   return (
@@ -55,6 +62,8 @@ export function App() {
             <Route path="register-teacher" element={<RegisterTeacher />} />
             <Route path="register-school" element={<RegisterSchool />} />
             <Route path="about" element={<About />} />
+            <Route path="blogs" element={<Blogs />} />
+            <Route path="blogs/:id" element={<BlogDetails />} />
             <Route path="privacy" element={<PlaceholderPage title="Privacy Policy" />} />
             <Route path="terms" element={<PlaceholderPage title="Terms of Service" />} />
             <Route path="resources" element={<PlaceholderPage title="Resources" />} />
@@ -68,14 +77,20 @@ export function App() {
             
             {/* Admin specific */}
             <Route path="users" element={<ManageUsers />} />
+            <Route path="admin/schools" element={<AdminSchools />} />
+            <Route path="admin/teachers" element={<AdminTeachers />} />
+            <Route path="admin/teachers/:id" element={<AdminTeacherDetails />} />
+            <Route path="admin/vacancies" element={<AdminVacancies />} />
             
             {/* Teacher specific */}
             <Route path="applications" element={<MyApplications />} />
             <Route path="saved" element={<SavedJobs />} />
+            <Route path="schools" element={<SchoolsList />} />
             
             {/* School specific */}
             <Route path="jobs" element={<MyJobPostings />} />
             <Route path="applicants" element={<Applicants />} />
+            <Route path="find-teachers" element={<TeachersList />} />
           </Route>
         </Routes>
       </BrowserRouter>

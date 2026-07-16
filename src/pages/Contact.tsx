@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Clock, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { FadeIn } from '../components/ui/motion';
@@ -74,6 +74,41 @@ export function Contact() {
                       <br />
                       info@js-sister.com
                     </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-surface-base shadow-sm flex items-center justify-center shrink-0">
+                    <Clock className="h-6 w-6 text-surface-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-surface-strong mb-1">
+                      Business Hours
+                    </h4>
+                    <p className="text-text-secondary">
+                      Sunday - Friday: 9:00 AM - 5:00 PM
+                      <br />
+                      Saturday: Closed
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-border-default mt-8">
+                  <h4 className="font-bold text-surface-strong mb-4">
+                    Follow Us
+                  </h4>
+                  <div className="flex gap-4">
+                    <a href="#" className="w-10 h-10 rounded-full bg-surface-base shadow-sm flex items-center justify-center text-text-secondary hover:text-surface-accent hover:border-surface-accent transition-colors border border-transparent">
+                      <Facebook className="h-5 w-5" />
+                    </a>
+                    <a href="#" className="w-10 h-10 rounded-full bg-surface-base shadow-sm flex items-center justify-center text-text-secondary hover:text-surface-accent hover:border-surface-accent transition-colors border border-transparent">
+                      <Twitter className="h-5 w-5" />
+                    </a>
+                    <a href="#" className="w-10 h-10 rounded-full bg-surface-base shadow-sm flex items-center justify-center text-text-secondary hover:text-surface-accent hover:border-surface-accent transition-colors border border-transparent">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                    <a href="#" className="w-10 h-10 rounded-full bg-surface-base shadow-sm flex items-center justify-center text-text-secondary hover:text-surface-accent hover:border-surface-accent transition-colors border border-transparent">
+                      <Instagram className="h-5 w-5" />
+                    </a>
                   </div>
                 </div>
               </div>

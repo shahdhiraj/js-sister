@@ -33,7 +33,7 @@ export const DashboardLayout = () => {
         <TopBar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
         
         <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto w-full max-w-none">
             <Outlet />
           </div>
         </main>

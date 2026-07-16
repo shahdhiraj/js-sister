@@ -40,6 +40,10 @@ export function Navbar() {
     path: '/pricing'
   },
   {
+    name: 'Blog',
+    path: '/blogs'
+  },
+  {
     name: 'Contact',
     path: '/contact'
   }];
