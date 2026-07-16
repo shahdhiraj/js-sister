@@ -143,6 +143,88 @@ export function Schools() {
           </div>
         </div>
       </section>
-    </div>);
 
+      {/* Partner Schools and Vacancies Showcase */}
+      <section className="py-24 bg-surface-base">
+        <div className="container mx-auto px-4 md:px-6">
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-surface-strong mb-4">
+              Featured Partner Schools
+            </h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              Explore opportunities from top educational institutions connected with our platform.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Everest International School',
+                location: 'Kathmandu, Bagmati',
+                vacancies: [
+                  { title: 'Senior Science Teacher', type: 'Full-time' },
+                  { title: 'Mathematics Teacher', type: 'Part-time' }
+                ],
+                logo: 'EIS'
+              },
+              {
+                name: 'Himalayan Public Academy',
+                location: 'Pokhara, Gandaki',
+                vacancies: [
+                  { title: 'English Teacher', type: 'Full-time' },
+                  { title: 'Computer Science Instructor', type: 'Full-time' }
+                ],
+                logo: 'HPA'
+              },
+              {
+                name: 'Lumbini Global Academy',
+                location: 'Lalitpur, Bagmati',
+                vacancies: [
+                  { title: 'Primary Teacher', type: 'Full-time' }
+                ],
+                logo: 'LGA'
+              }
+            ].map((school, i) => (
+              <StaggerItem key={i}>
+                <div className="bg-surface-muted rounded-2xl border border-border-default overflow-hidden hover:border-surface-accent transition-colors flex flex-col h-full group">
+                  <div className="p-6 border-b border-border-default flex items-center space-x-4 bg-surface-base">
+                    <div className="w-16 h-16 rounded-full bg-surface-accent/10 flex items-center justify-center font-bold text-surface-accent text-xl flex-shrink-0 group-hover:bg-surface-accent group-hover:text-white transition-colors">
+                      {school.logo}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-surface-strong line-clamp-1">
+                        {school.name}
+                      </h3>
+                      <p className="text-sm text-text-secondary flex items-center mt-1">
+                        <Building className="h-4 w-4 mr-1 opacity-70" />
+                        {school.location}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6 flex-grow flex flex-col">
+                    <h4 className="text-sm font-semibold text-surface-strong uppercase tracking-wider mb-4">
+                      Active Vacancies ({school.vacancies.length})
+                    </h4>
+                    <div className="space-y-3 mb-6 flex-grow">
+                      {school.vacancies.map((vacancy, idx) => (
+                        <div key={idx} className="flex justify-between items-center text-sm p-3 bg-surface-base rounded-lg border border-border-default">
+                          <span className="font-medium text-surface-strong">{vacancy.title}</span>
+                          <span className="text-xs bg-surface-accent/10 text-surface-accent px-2 py-1 rounded-full font-medium whitespace-nowrap ml-2">
+                            {vacancy.type}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <Link to="/jobs" className="mt-auto block w-full text-center py-3 bg-surface-base border border-surface-accent text-surface-accent rounded-lg font-medium hover:bg-surface-accent hover:text-white transition-colors">
+                      View All Vacancies
+                    </Link>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+    </div>
+  );
 }

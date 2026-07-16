@@ -74,10 +74,10 @@ export function Jobs() {
   return (
     <div className="min-h-screen bg-surface-muted pb-24">
       {/* Search Header */}
-      <section className="bg-surface-strong pt-24 pb-12">
+      <section className="bg-surface-base pt-24 pb-12 border-b border-border-default">
         <div className="container mx-auto px-4 md:px-6">
           <FadeIn>
-            <h1 className="text-3xl md:text-4xl font-bold text-surface-base mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-surface-strong mb-6">
               Find Your Next Teaching Role
             </h1>
             <div className="bg-surface-base p-2 rounded-xl shadow-3 flex flex-col md:flex-row gap-2">

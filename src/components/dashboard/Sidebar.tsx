@@ -32,7 +32,6 @@ export const Sidebar = () => {
           { name: 'Overview', to: '/dashboard', icon: LayoutDashboard, exact: true },
           { name: 'My Applications', to: '/dashboard/applications', icon: Briefcase },
           { name: 'Saved Jobs', to: '/dashboard/saved', icon: FileText },
-          { name: 'Schools', to: '/dashboard/schools', icon: Building },
           { name: 'Profile Settings', to: '/dashboard/settings', icon: Settings },
         ];
       case 'school':

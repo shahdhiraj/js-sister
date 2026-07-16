@@ -28,8 +28,8 @@ export function Navbar() {
     path: '/'
   },
   {
-    name: 'Find Teachers',
-    path: '/teachers'
+    name: 'Vacancies',
+    path: '/jobs'
   },
   {
     name: 'Schools',
