@@ -44,10 +44,6 @@ export function Jobs() {
     setSelectedSubjects([]);
   };
 
-  const toggleFilter = (item: string, list: string[], setList: React.Dispatch<React.SetStateAction<string[]>>) => {
-    setList(prev => prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]);
-  };
-
   const filteredJobs = useMemo(() => {
     let result = MOCK_JOBS.filter(job => {
       const keywordMatch = !searchTerm || 
@@ -132,7 +128,13 @@ export function Jobs() {
                         <input
                           type="checkbox"
                           checked={selectedTypes.includes(type)}
-                          onChange={() => toggleFilter(type, selectedTypes, setSelectedTypes)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setSelectedTypes(prev => [...prev, type]);
+                            } else {
+                              setSelectedTypes(prev => prev.filter(i => i !== type));
+                            }
+                          }}
                           className="w-4 h-4 rounded border-border-default text-surface-strong focus:ring-focus-ring" 
                         />
                         <span className="text-sm text-text-secondary group-hover:text-surface-strong transition-colors">
@@ -151,7 +153,13 @@ export function Jobs() {
                         <input
                           type="checkbox"
                           checked={selectedSubjects.includes(subject)}
-                          onChange={() => toggleFilter(subject, selectedSubjects, setSelectedSubjects)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setSelectedSubjects(prev => [...prev, subject]);
+                            } else {
+                              setSelectedSubjects(prev => prev.filter(i => i !== subject));
+                            }
+                          }}
                           className="w-4 h-4 rounded border-border-default text-surface-strong focus:ring-focus-ring" 
                         />
                         <span className="text-sm text-text-secondary group-hover:text-surface-strong transition-colors">
@@ -185,7 +193,7 @@ export function Jobs() {
             </div>
 
             {filteredJobs.length > 0 ? (
-              <StaggerContainer className="space-y-4">
+              <StaggerContainer key={filteredJobs.map(j => j.id).join('-')} className="space-y-4">
                 {filteredJobs.map((job) => (
                   <StaggerItem key={job.id}>
                     <div className="group bg-surface-base rounded-xl p-6 shadow-sm border border-border-default hover:shadow-md hover:border-surface-accent/30 transition-all duration-300 flex flex-col md:flex-row gap-6 relative overflow-hidden">
