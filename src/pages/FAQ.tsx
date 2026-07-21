@@ -76,14 +76,14 @@ export function FAQ() {
   return (
     <div className="min-h-screen bg-surface-muted pb-24">
       {/* Hero Section */}
-      <section className="bg-surface-strong text-surface-base pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-surface-accent/10 via-transparent to-transparent opacity-50"></div>
+      <section className="bg-surface-muted text-surface-strong pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-surface-accent/5 via-transparent to-transparent opacity-50"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               How can we help you?
             </h1>
-            <p className="text-surface-muted/80 text-lg mb-10 max-w-2xl mx-auto">
+            <p className="text-text-secondary text-lg mb-10 max-w-2xl mx-auto">
               Search our knowledge base or browse categories below to find
               answers to your questions.
             </p>
